@@ -23,4 +23,4 @@ but still need code optimization.
 <img src="https://github.com/natylaza89/MQTT_Client/blob/master/publish.gif">
 
 ## Thanks
->1. <a href="https://github.com/eclipse/paho.mqtt.python">paho-mqtt</a>.
+>1. <a href="https://github.com/eclipse/paho.mqtt.python">paho-mqtt</a>

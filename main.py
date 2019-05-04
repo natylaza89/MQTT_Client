@@ -100,14 +100,14 @@ class App(QMainWindow):
                 self.__current_settings = json.load(f)
                 print(self.__current_settings)
 
-                self.__set_broker_ip = self.__current_settings["Broker IP"]
-                self.__set_port = self.__current_settings["Port"]
-                self.__set_username = self.__current_settings["Username"]
-                self.__set_password = self.__current_settings["Password"]
-                self.__set_qos = self.__current_settings["QoS"]
-                self.__set_retain = self.__current_settings["Retain"]
-                self.__set_clean_session = self.__current_settings["Clean Session"]
-                self.__set_topic = self.__current_settings["Topic"]
+                self.__broker_ip = self.__current_settings["Broker IP"]
+                self.__port = int(self.__current_settings["Port"])
+                self.__username = self.__current_settings["Username"]
+                self.__password = self.__current_settings["Password"]
+                self.__qos = int(self.__current_settings["QoS"])
+                self.__retain = eval(self.__current_settings["Retain"])
+                self.__clean_session = eval(self.__current_settings["Clean Session"])
+                self.__topic = self.__current_settings["Topic"]
 
                 # Clear the Status bar
                 self.__statusbar_table.clear()
@@ -152,7 +152,7 @@ class App(QMainWindow):
 
                 with open(file[0], 'w') as f:
                     #settings_serialization = self.__current_settings
-                    json.dump(self.__current_settings, f, sort_keys=True)
+                    json.dump(self.__current_settings, f)
 
         except FileNotFoundError as fnfe:
             self.__statusbar_table.append("<center>File Not Found Error: {}".format(fnfe))
@@ -575,7 +575,6 @@ class App(QMainWindow):
         #self.__topic = "matzi/iot/naty"
         #self.__message = "Naty Test"
         #self.__port = 80
-        print(self.__broker_ip,self.__port, self.__username, self.__password, self.__qos,self.__retain, self.__clean_session, self.__topic, self. __message)
 
         # Clear the Status bar
         self.__statusbar_table.clear()
