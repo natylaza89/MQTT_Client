@@ -1,7 +1,5 @@
 import sys
 import os
-import logging
-import keyboard
 import random
 import json
 
@@ -9,10 +7,11 @@ import subprocess
 import time
 from datetime import datetime
 
-from PyQt5.QtCore import QSize, Qt, QRegExp, QRegularExpression
+from PyQt5.QtCore import (QSize, Qt, QRegExp, QRegularExpression)
 from PyQt5.QtGui import (QIcon, QPixmap, QImage, QPalette, QBrush, QIntValidator, QRegExpValidator)
-from PyQt5.QtWidgets import (QTextBrowser, QMainWindow, QLabel, QLineEdit, QPushButton,QSystemTrayIcon, QMessageBox,QApplication,
-                             QMenu, QHBoxLayout, QAction, QFileDialog, QVBoxLayout, QComboBox, QWidget,  QTabWidget, QCheckBox, qApp)
+from PyQt5.QtWidgets import (QTextBrowser, QMainWindow, QLabel, QLineEdit, QPushButton,QSystemTrayIcon, QMessageBox,
+                             QApplication, QMenu, QHBoxLayout, QAction, QFileDialog, QVBoxLayout, QComboBox, QWidget,
+                             QTabWidget, QCheckBox, qApp)
 
 import paho.mqtt.client as mqtt
 
