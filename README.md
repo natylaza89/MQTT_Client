@@ -21,6 +21,7 @@ double click - show the UI, middle click - hide the UI.
 >7. Display Boxes of Sent & Received messages.
 >8. Publish/Subscribe button for both modes.
 >9. Delete the current Messages from the Display Boxes.
+>10. Perfom Basic Automation based on received message (ping via cmd, open chrome, lock/shutdown pc etc.)
 
 ## To-Do List
 >1. Unitest Codes.
@@ -28,7 +29,7 @@ double click - show the UI, middle click - hide the UI.
 
 ## Quick-Preview
 <img src="https://github.com/natylaza89/MQTT_Client/blob/master/configuration_tab.png">
-<img src="https://github.com/natylaza89/MQTT_Client/blob/master/client_gui_tab.gif">
+<img src="https://github.com/natylaza89/MQTT_Client/blob/master/client_gui_tab.png">
 
 ## Thanks
 >1. <a href="https://github.com/eclipse/paho.mqtt.python">paho-mqtt</a>
