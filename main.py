@@ -1529,6 +1529,8 @@ class ClientGuiWidget(QWidget):
                                                                                    time_date))
                 else:
                     raise UserWarning("You Didn't Set a Message to Send.")
+            else:
+                raise UserWarning("You Are Disconnected!")
 
         except UserWarning as uw:
             instance[2].statusbar.showMessage("UserWarning: {}".format(uw))
@@ -1554,20 +1556,22 @@ class ClientGuiWidget(QWidget):
 
         try:
 
-            if cls.topic is not None and cls.qos is not None:
+            if cls.client.connected_flag is True:
                 if cls.client.subscribe_status is False:
+                    if cls.topic is not None and cls.qos is not None:
+                        # Update Subscribe Status Flag
+                        cls.client.subscribe_status = True
 
-                    # Update Subscribe Status Flag
-                    cls.client.subscribe_status = True
-
-                    # Start the loop
-                    cls.client.loop_start()
-                    cls.client.subscribe(cls.topic, cls.qos)
-                    time.sleep(0.1)
+                        # Start the loop
+                        cls.client.loop_start()
+                        cls.client.subscribe(cls.topic, cls.qos)
+                        time.sleep(0.1)
+                    else:
+                        raise UserWarning("You Didn't Set a Topic or QoS For Subscribing.")
                 else:
                     raise UserWarning("You Already In Subscribe Mode")
             else:
-                raise UserWarning("You Didn't Set a Topic or QoS For Subscribing.")
+                raise UserWarning("You Are Disconnected!")
 
         except UserWarning as uw:
             instance[2].statusbar.showMessage("UserWarning: {}".format(uw))
