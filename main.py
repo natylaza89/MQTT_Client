@@ -63,6 +63,7 @@ class App(QMainWindow):
         self.statusbar.showMessage("Welcome!")
 
         self.tray = self.create_tray()
+
         self.init_ui()
 
     def closeEvent(self, event):
@@ -92,7 +93,8 @@ class App(QMainWindow):
             close = close.exec()
 
             if close == QMessageBox.Yes:
-                self.tray.hide()
+                #self.tray.hide()
+                self.tray.setVisible(False)
                 event.accept()
 
             else:
@@ -1673,6 +1675,7 @@ class ClientGuiWidget(QWidget):
 
         try:
             client.connected_flag = False
+            client.subscribe_status = False
             print("Mqtt Client Has Been Disconnected successfully With Result Code: {} ".format(str(rc)))
             userdata[2].statusbar.showMessage("Mqtt Client Has Been Disconnected successfully With Result Code: {} ".
                                               format(str(rc)))
