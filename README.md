@@ -23,10 +23,6 @@ double click - show the UI, middle click - hide the UI.
 >9. Delete the current Messages from the Display Boxes.
 >10. Perfom Basic Automation based on received message (ping via cmd, open chrome, lock/shutdown pc etc.)
 
-## To-Do List
->1. Unitest Codes.
->2. Exe file / Wizard Installer
-
 ## Quick-Preview
 <img src="https://github.com/natylaza89/MQTT_Client/blob/master/configuration_tab.png">
 <img src="https://github.com/natylaza89/MQTT_Client/blob/master/client_gui_tab.png">
